@@ -20,7 +20,14 @@
     <%= 'This song has not been upload audio yet!' %> <br><br>
 <% end %>
 
-
+<%= form_with(model: @favorite_song, local: true) do |form| %>
+  <div class= "field">
+    <%= form.hidden_field :song_id, :value => @song.id %>
+  </div>
+  <div class="actions">
+    <%= form.submit "Add to Favorite List"%>
+</div>
+<% end %>
 <h2>Review From</h2>
 <%= form_with(model: @review_song, local: true) do |form| %>
   <div class= "field">
