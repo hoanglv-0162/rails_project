@@ -9,10 +9,10 @@
   <strong>Artist:</strong>
   <%= @song.artist %>
 </p>
-<p>
-    <%= asset_path @song.mp3 %>
-  <% end %>
-</p>
+<audio controls>
+    <source src="<%= rails_blob_url(@song.mp3) %>" 
+    type="audio/mpeg" />
+</audio><br><br>
 
 <%= link_to 'Edit', edit_song_path(@song) %> |
 <%= link_to 'Back', songs_path %>
