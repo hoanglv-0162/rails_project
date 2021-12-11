@@ -1,3 +1,7 @@
 <p style="text-align:center; color:red;">Today is <%= Date.today %></p>
 <h1>Home Page</h1>
-<p>新しい曲を追加</p>
+<% if user_signed_in? %>
+<%= link_to "歌一覧をみる", songs_path %>
+<% else %>
+<p></p>
+<% end %>
