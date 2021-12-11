@@ -7,4 +7,5 @@ class User < ApplicationRecord
          
   validates :name, presence: true
   validates :age, presence: true
+  has_many :favorite_song, -> { order "created_at DESC"}
 end

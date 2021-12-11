@@ -1,0 +1,13 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @favorite_song.user_id %>
+</p>
+
+<p>
+  <strong>Song:</strong>
+  <%= @favorite_song.song_id %>
+</p>
+<%= link_to 'Edit', edit_favorite_song_path(@favorite_song) %> |
+<%= link_to 'Back', favorite_songs_path %>

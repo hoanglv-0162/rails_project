@@ -8,6 +8,7 @@ class SongsController < ApplicationController
 
   # GET /songs/1 or /songs/1.json
   def show
+    @favorite_song = FavoriteSong.new
   end
 
   # GET /songs/new

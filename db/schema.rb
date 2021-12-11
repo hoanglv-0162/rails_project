@@ -32,7 +32,12 @@ ActiveRecord::Schema.define(version: 2021_12_11_083122) do
     t.datetime "created_at", null: false
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
   end
-
+  create_table "favorite_songs", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "book_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
   create_table "songs", force: :cascade do |t|
     t.string "name"
     t.string "artist"
