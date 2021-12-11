@@ -14,5 +14,25 @@
     type="audio/mpeg" />
 </audio><br><br>
 
+
+<h2>Review From</h2>
+<%= form_with(model: @review_song, local: true) do |form| %>
+  <div class= "field">
+    <%= form.text_area :review %>
+    <%= form.hidden_field :song_id, :value => @song.id %>
+  </div>
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
+
+<h2>Review List</h2>
+<ul>
+  <% @song.review_song.each do |review_song|%>
+   <li><%= review_song.review %>
+     (<i><%= review_song.user.name if review_song.user %></i>)</li>
+<% end %>
+</ul>
+
 <%= link_to 'Edit', edit_song_path(@song) %> |
 <%= link_to 'Back', songs_path %>

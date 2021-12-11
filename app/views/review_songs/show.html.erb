@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @review_song.user_id %>
+</p>
+
+<p>
+  <strong>Song:</strong>
+  <%= @review_song.song_id %>
+</p>
+
+<p>
+  <strong>Review:</strong>
+  <%= @review_song.review %>
+</p>
+
+<%= link_to 'Edit', edit_review_song_path(@review_song) %> |
+<%= link_to 'Back', review_songs_path %>

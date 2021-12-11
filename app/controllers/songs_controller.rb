@@ -1,6 +1,6 @@
 class SongsController < ApplicationController
   before_action :set_song, only: %i[ show edit update destroy ]
-
+  before_action :authenticate_user!
   # GET /songs or /songs.json
   def index
     @songs = Song.all
@@ -8,6 +8,7 @@ class SongsController < ApplicationController
 
   # GET /songs/1 or /songs/1.json
   def show
+      @review_song = ReviewSong.new
   end
 
   # GET /songs/new
