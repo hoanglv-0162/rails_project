@@ -1,0 +1,32 @@
+<%= form_with(model: review_song, local: true) do |form| %>
+  <% if review_song.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(review_song.errors.count, "error") %> prohibited this review_song from being saved:</h2>
+
+      <ul>
+        <% review_song.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :user_id %>
+    <%= form.number_field :user_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :song_id %>
+    <%= form.number_field :song_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :review %>
+    <%= form.text_area :review %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

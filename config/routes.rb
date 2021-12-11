@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :review_songs
   resources :songs
   get 'users/show'
   get 'static_pages/home'
