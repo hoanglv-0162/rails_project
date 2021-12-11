@@ -9,10 +9,16 @@
   <strong>Artist:</strong>
   <%= @song.artist %>
 </p>
-<audio controls>
-    <source src="<%= rails_blob_url(@song.mp3) %>" 
-    type="audio/mpeg" />
-</audio><br><br>
+
+<% if @song.mp3.attached? %>
+    <audio controls>
+        <source src="<%= rails_blob_url(@song.mp3) %>" 
+        type="audio/mpeg" />
+    </audio><br><br>
+    
+<% else %>
+    <%= 'This song has not been upload audio yet!' %> <br><br>
+<% end %>
 
 
 <h2>Review From</h2>
