@@ -19,29 +19,39 @@
     font-family: 'Poppins',sans-serif;
     padding: 5px 10px 5px 10px;
  }
+a, a:visited {
+    font-weight: 600;
+    color: #00f;
+    text-decoration: none;
+}
+a:hover {
+    color: #ffffff;
+    background:#777777 ;
+    text-decoration: underline;
+}
+.head{
+     background: #FF9B00;
+     padding: 10px 15px;
+ }
+ .head a{
+    font-size: 1.3em;
+    margin: 0 0 0 10px;
+    color: #ffffff;
+ }
+  .head a:hover{
+      background: transparent;
+  }
  .nav{
      width: 100%;
      display: flex;
      justify-content : flex-end;
      margin-bottom: 5px;
  }
- .nav a{
-     font-size: 1.3em;
-     margin: 0 0 0 10px;
- }
  .Profile{
      width: 100%;
      display: flex;
      justify-content : flex-end;
  }
- a, a:visited {
-    font-weight: 600;
-    color: #00f;
-}
-a:hover {
-    color: #ffffff;
-    text-decoration: underline;
-}
 td {
     padding: 5px;
 }
