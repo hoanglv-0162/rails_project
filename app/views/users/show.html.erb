@@ -1,4 +1,26 @@
-<strong>好きな曲</strong><br>
+
+
+
+<h1>Profile</h1>
+
+<% if current_user.avatar.attached? %>
+    <strong>Avatar</strong>
+    <div class="imgbox">
+        <%= image_tag current_user.avatar %><br><br>
+    </div>
+    
+<% end %>
+
+<strong>Name</strong><br>
+<%= current_user.name %><br><br>
+
+<strong>Age</strong><br>
+<%= current_user.age %><br><br>
+
+<strong>Mail address </strong><br>
+<%= current_user.email%><br><br>
+
+<strong>Favorite List</strong><br>
 <% if !current_user.favorite_song.empty? %>
     <table class="table">
           <thead>
@@ -23,22 +45,3 @@
     </table>
 <% end %>
 <br><br>
-
-<h1>プロフィール</h1>
-
-<% if current_user.avatar.attached? %>
-    <strong>アバター</strong>
-    <%= image_tag current_user.avatar %><br><br>
-<% end %>
-
-<strong>名前</strong><br>
-<%= current_user.name %><br><br>
-
-<strong>年齢</strong><br>
-<%= current_user.age %><br><br>
-
-<strong>メールアドレス </strong><br>
-<%= current_user.email%><br><br>
-
-
-
