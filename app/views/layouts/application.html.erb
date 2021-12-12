@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Project</title>
+    <title>Music Player</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -10,14 +10,18 @@
   </head>
 
   <body>
+    <div class="nav">
     <%= link_to "ホーム", root_path %>
     
     <% if user_signed_in? %>
         <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
-        <p><%= link_to current_user.email  , users_show_path %></p>
     <% else %>
         <%= link_to "サインイン", new_user_session_path %>
         <%= link_to "ユーザ登録", new_user_registration_path %>
+    <% end %>
+    </div>
+    <% if user_signed_in? %>
+        <div class='Profile'><%= link_to 'View Profile'  , users_show_path %></div>
     <% end %>
     <hr>
     <%= yield %>
