@@ -52,7 +52,8 @@ class FavoriteSongsController < ApplicationController
   def destroy
     @favorite_song.destroy
     respond_to do |format|
-      format.html { redirect_to favorite_songs_url, notice: "Favorite song was successfully destroyed." }
+        url = "/"
+      format.html { redirect_to url, notice: "Favorite song was successfully destroyed." }
       format.json { head :no_content }
     end
   end
