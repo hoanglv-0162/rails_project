@@ -9,6 +9,10 @@
   <strong>Artist:</strong>
   <%= @song.artist %>
 </p>
+<p>
+  <strong>Uploader:</strong>
+  <%= @song.user.name %>
+</p>
 
 <% if @song.mp3.attached? %>
     <audio controls>
