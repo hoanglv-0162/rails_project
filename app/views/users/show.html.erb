@@ -1,10 +1,26 @@
 <strong>好きな曲</strong><br>
-<ul>
-  <% current_user.favorite_song.each do |favorite_song|%>
-   <li><%= favorite_song.song.name %></li>
-<% end %>
-</ul>
-<% %><br><br>
+<table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Artist</th>
+          <th>Listen</th>
+          <th>Remove from list</th>
+        </tr>
+      </thead>
+    
+      <tbody>
+        <% current_user.favorite_song.each do |favorite_song|%>
+          <tr>
+            <td><%= favorite_song.song.name %></td>
+            <td><%= favorite_song.song.artist%></td>
+            <td><%= link_to 'Listen', favorite_song.song %></td>
+            <td><%= link_to 'Remove',favorite_song, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+<br><br>
 
 <h1>プロフィール</h1>
 
