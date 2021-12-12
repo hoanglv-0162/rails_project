@@ -25,11 +25,11 @@
 <% end %>
 <% had_add = false %>
 <% current_user.favorite_song.each do |favorite_song| %>
-    <%if favorite_song.song_id = @song.id%>
+    <%if favorite_song.song_id == @song.id%>
         <%had_add = true%>
     <%end%>
 <% end %>
-<% if had_add = false %>
+<% if had_add == false %>
     <%= form_with(model: @favorite_song, local: true) do |form| %>
       <div class= "field">
         <%= form.hidden_field :song_id, :value => @song.id %>
