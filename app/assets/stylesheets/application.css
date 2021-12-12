@@ -26,7 +26,7 @@ a, a:visited {
 }
 a:hover {
     color: #ffffff;
-    background:#777777 ;
+    background:transparent ;
     text-decoration: underline;
 }
 .head{
