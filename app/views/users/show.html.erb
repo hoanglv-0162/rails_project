@@ -6,7 +6,7 @@
 <% if current_user.avatar.attached? %>
     <strong>Avatar</strong>
     <div class="imgbox">
-        <%= image_tag current_user.avatar %><br><br>
+        <%= image_tag current_user.avatar, width: "200px"%><br><br>
     </div>
     
 <% end %>
