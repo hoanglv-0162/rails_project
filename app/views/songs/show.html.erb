@@ -58,7 +58,12 @@
 <ul>
   <% @song.review_song.each do |review_song|%>
    <li><%= review_song.review %>
-     (<i><%= review_song.user.name if review_song.user %></i>)</li>
+     --<i><%= review_song.user.name if review_song.user %></i>
+     <% if current_user.id == review_song.user_id %>
+        <%= link_to 'Edit', edit_review_song_path(review_song) %>   
+        <%= link_to 'Destroy', review_song, method: :delete, data: { confirm: 'Are you sure?' } %>
+    <%end%>
+   </li>
 <% end %>
 </ul>
 <% if current_user.id == @song.user_id %>
